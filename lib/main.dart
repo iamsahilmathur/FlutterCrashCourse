@@ -17,32 +17,48 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("CrashCourse"),
       ),
-      body: Center(
-        child: Container(
-          width: 100,
-          height: 100,
-          padding: const EdgeInsets.all(10),
-          alignment: Alignment.center,
-          decoration: const BoxDecoration(
-              color: Colors.teal,
-              gradient: LinearGradient(colors: [
-                Colors.teal,
-                Colors.tealAccent
-              ]),
-            shape: BoxShape.circle,
-            boxShadow: [
-              BoxShadow(color: Colors.grey,blurRadius: 10)
-            ]
-          ),
-          child: const Text(
-            textAlign: TextAlign.center,
-            "I am a box",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+      body: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Box(color: Colors.green, str: "I am Green"),
+            Box(color: Colors.red, str: "I am Red"),
+            Box(color: Colors.yellow, str: "I am Yellow")
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Box extends StatelessWidget {
+  final Color color;
+  final String str;
+
+  const Box({super.key, required this.color, required this.str});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 100,
+      height: 100,
+      padding: const EdgeInsets.all(10),
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+          color: color,
+          shape: BoxShape.rectangle,
+          borderRadius: BorderRadius.circular(6),
+          boxShadow: const [BoxShadow(color: Colors.grey, blurRadius: 10)]),
+      child: Text(
+        str,
+        textAlign: TextAlign.center,
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );
