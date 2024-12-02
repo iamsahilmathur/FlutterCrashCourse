@@ -1,4 +1,4 @@
-package com.crashcourse.soft.flutter_crash_course
+package com.example.flutter_catalog
 
 import io.flutter.embedding.android.FlutterActivity
 

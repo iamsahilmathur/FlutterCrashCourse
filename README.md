@@ -1,4 +1,4 @@
-# flutter_crash_course
+# flutter_catalog
 
 A new Flutter project.
 
